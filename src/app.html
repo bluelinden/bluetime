@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div id="splash" class="bg-[#0a1f00] h-screen flex flex-col justify-items-center items-center my-auto">
+			<img src="/images/simple-hourlasso-logo-larger.png" class="mx-auto mt-auto mb-auto"></img>
+		</div >
+		<style>
+		@keyframes rainbow {
+			0% {
+			    filter:hue-rotate(0deg);
+			}
+			33% {
+			    filter:hue-rotate(120deg);
+			}
+			67% {
+			    filter:hue-rotate(240deg);
+			}
+			100% {
+			    filter:hue-rotate(360deg);
+			}
+		}
+		
+		#splash img {
+			animation: rainbow 1s steps(3) infinite;
+		}
+		</style>
+		<div id="main" style="display: contents; min-height: 100vh; display: none;">%sveltekit.body%</div>
+	</body>
+</html>

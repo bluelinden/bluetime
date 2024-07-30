@@ -1,0 +1,65 @@
+[build]
+beforeBuildCommand = "bun run build"
+beforeDevCommand = "bun run dev"
+devPath = "http://localhost:5173"
+distDir = "../build"
+
+[package]
+productName = "Hourlasso"
+
+[tauri.allowlist]
+all = false
+window.show = true
+
+[tauri.bundle]
+active = true
+category = "DeveloperTool"
+copyright = ""
+externalBin = []
+icon = [
+    "icons/32x32.png",
+    "icons/128x128.png",
+    "icons/128x128@2x.png",
+    "icons/icon.icns",
+    "icons/icon.ico",
+]
+identifier = "art.bluelinden.hourlasso"
+longDescription = ""
+resources = []
+shortDescription = ""
+targets = ["deb", "updater"]
+
+[tauri.bundle.deb]
+depends = []
+
+[tauri.bundle.macOS]
+exceptionDomain = ""
+frameworks = []
+
+[tauri.bundle.windows]
+digestAlgorithm = "sha256"
+timestampUrl = ""
+
+[tauri.security]
+
+[tauri.updater]
+active = false
+
+[[tauri.windows]]
+fullscreen = false
+height = 600
+resizable = true
+title = "Hourlasso"
+label = "hourlasso"
+width = 800
+visible = false
+
+[tauri.systemTray]
+iconPath = "./icons/simple-hourlasso-logo.png"
+title = "Hourlasso"
+
+[tauri.cli]
+description = "Hourlasso: the easy, free screen time app for Linux"
+longDescription = """Hourlasso: the easy, free screen time and digital wellbeing app for Linux"""
+# native messaging extension argument, if called with this and it's a firefox/chrome extension URL or App ID then the app behaves in Native Messaging relay mode and relays everything to an already running instance.
+args = [ { name = "nm_appid", index = 1, takesValue = true } ]
